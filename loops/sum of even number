@@ -1,0 +1,13 @@
+//online compiler
+#include <iostream>
+using namespace std;
+
+int main() {
+int i;
+int n;
+cin>>n;
+int sum;
+	sum=n*(n+1);
+	cout<<sum;
+
+}
