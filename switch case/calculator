@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+int a;
+cin>>a;
+cout<<"enter a";
+int b;
+cin>>b;
+cout<<"enter b";
+char op;
+cin>>op;
+cout<<"operation which we perform";
+switch(op)
+{
+case '+':cout<<(a+b)<<endl;
+break;
+case '-': cout<<(a-b)<<endl;
+break;
+case'*': cout<<(a*b)<<endl;
+break;
+case '/': cout<<(a/b)<<endl; 
+break;
+case '%': cout<<(a%b)<<endl;
+break;
+default: cout<<"please enter a valid operation";
+}
+	return 0;
+}
