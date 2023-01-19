@@ -1,0 +1,27 @@
+
+#include <iostream>
+using namespace std;
+void printarray(int arr[],int n){
+{
+for(int i=0;i<n;i++)
+{
+cout<<arr[i];
+}
+int main() {
+	//declear array
+int nums[10];
+//accessing an array
+cout<<"value is"<<nums[4]<<endl;
+cout<<"everything is fine"<<endl;
+//initilising an arary
+int n;
+cin>>n;
+int second[3]={1,2,3};
+cout<<"value at index  2 is"<<second[2];
+int third[12]={1,2,3,4};
+int n=12;
+cout<<"printing the array";
+//print the array
+for(int i=0;i<n;i++)
+cout<<third[i]<<" ";
+}
