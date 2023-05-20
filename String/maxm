@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int maximumValue(vector<string>& strs) {
+       int maxm=0;
+        for(int i=0;i<strs.size();i++){
+        if(all_of(strs[i].begin(),strs[i].end(),::isdigit)){
+        maxm=max(maxm,stoi(strs[i]));
+        }
+        else{
+            int length = strs[i].length();
+            maxm=max(maxm,length);
+        }
+    }
+        return maxm; 
+    }
+};
