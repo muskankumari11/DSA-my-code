@@ -1,0 +1,20 @@
+class Solution{
+    public:
+    int similarPairs(vector<string>&words){
+        int n=words.size();
+        int count=0;
+        for(int i=0;i<n;i++){
+            for(int j=i+1;j<n;j++){
+                if(areSimilar(words[i],words[j])){
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+    bool areSimilar(const string&word1,const string& word2){
+        unordered_set<char>charSet1(word1.begin(),word1.end());
+        unordered_set<char>charSet2(word2.begin(),word2.end());
+        return charSet1==charSet2;
+    }
+};
