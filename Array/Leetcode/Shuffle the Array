@@ -1,0 +1,17 @@
+class Solution{
+public:
+vector<int>shuffle(vector<int>& nums, int n){
+    vector<int>x(n);
+    vector<int>y(n);
+    vector<int>newarray(2*n);
+    for(int i=0;i<n;i++){
+        x[i]=nums[i];
+        y[i]=nums[i+n];
+    }
+    for(int i=0;i<n;i++){
+        newarray[2*i]=x[i];
+        newarray[2*i+1]=y[i]; 
+    }
+    return newarray;
+    }
+};
