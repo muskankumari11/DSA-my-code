@@ -1,0 +1,10 @@
+class Solution {
+public:
+    int smallestEvenMultiple(int n) {
+        int multiple = n;
+        while (multiple % 2 != 0 || multiple % n != 0) {
+            multiple++;
+        }
+        return multiple;
+    }
+};
