@@ -1,0 +1,18 @@
+class MyHashSet {
+public:
+vector<bool>hash;
+    MyHashSet() {
+        hash.resize(1e6+1,0);
+    }
+    void add(int key) {
+        hash[key]=1;
+    }
+    
+    void remove(int key) {
+        hash[key]=0;
+    }
+    
+    bool contains(int key) {
+        return hash[key];   
+    }
+};
