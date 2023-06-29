@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int maximumCount(vector<int>& nums) {
+        int positive=0; 
+        int negative=0;
+        int res=0;
+           for(int i=0;i<nums.size();i++){
+            if(nums[i]==0) 
+            continue;
+            if(nums[i]>0)
+             positive++;
+            if(nums[i]<0) 
+            negative++;
+            res=max(res,positive);
+            res=max(res,negative);
+        }
+        return res;
+    }
+};
