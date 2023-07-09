@@ -1,0 +1,25 @@
+#include <algorithm>
+#include <string>
+#include <sstream>
+#include <vector>
+class Solution {
+public:
+    string sortSentence(string s) {
+        stringstream ss(s);
+        vector<string> words;
+        string word;
+        while (ss >> word) {
+            words.push_back(word);
+        }
+        sort(words.begin(), words.end(), [](const string& a, const string& b) {
+            return a.back() < b.back();
+        });
+        string sortedSentence;
+        for (const auto& w : words) {
+            sortedSentence += w.substr(0, w.size() - 1);
+            sortedSentence += ' ';
+        }
+        sortedSentence.pop_back();
+        return sortedSentence;
+    }
+};
