@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int differenceOfSum(vector<int>& nums) {
+        int dsum = 0;
+        int esum = 0;
+        int abs;
+        int i;
+        for ( i = 0; i < nums.size(); i++) {
+            dsum += nums[i];
+               while(nums[i]>0){
+         int k = nums[i]%10;
+            esum += k ; 
+           nums[i]=nums[i]/10; 
+        }
+        }
+        abs=dsum-esum;
+        return abs;
+    }
+};
