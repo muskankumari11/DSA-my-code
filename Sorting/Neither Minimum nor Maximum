@@ -1,0 +1,26 @@
+class Solution {
+public:
+    int findNonMinOrMax(vector<int>& nums) {
+        int n = nums.size();
+        if (n <= 2) {
+            return -1; 
+        }
+        int minVal=INT_MAX;
+        int maxVal=INT_MIN;
+        int secondMin=INT_MAX;
+        for(int i=0;i<n;i++){
+            if(nums[i]<minVal){
+                secondMin=minVal;
+                minVal=nums[i];
+            } 
+            else if(nums[i]>minVal && nums[i]<secondMin){
+                secondMin = nums[i];
+            }
+            maxVal=max(maxVal,nums[i]);
+        }
+        if (secondMin!=INT_MAX && secondMin!=maxVal){
+            return secondMin;
+        }
+        return -1; 
+    }
+};
