@@ -1,0 +1,28 @@
+class Solution {
+public:
+    bool isVowel(char ch) {
+        ch = tolower(ch);
+        return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u';
+    }
+    string sortVowels(string s) {
+        vector<int> an;
+        for(int i=0;i<s.size();i++){
+            if(isVowel(s[i])){
+                char ch= s[i];
+                int a= (int)ch;
+                an.push_back(a);
+            }
+        }
+        int j=0;
+        sort(an.begin(),an.end());
+        for(int i=0;i<s.size();i++){
+            if(isVowel(s[i])){
+                int num= an[j];
+                char ch= (char)num;
+                s[i]=ch;
+                j++;
+            }
+        }
+        return s;
+    }
+};
