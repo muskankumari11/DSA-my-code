@@ -1,0 +1,22 @@
+class Solution {
+public:
+   vector<int> deckRevealedIncreasing(vector<int>& deck) {
+       int n = deck.size();
+       vector<int> result(n);
+       sort(deck.begin(), deck.end());
+       queue<int> indices;
+       for (int i = 0; i < n; i++) {
+           indices.push(i);
+       }
+       for (int i = 0; i < n; i++) {
+           int index = indices.front();
+           indices.pop();
+           result[index] = deck[i];
+           if (!indices.empty()) {
+               indices.push(indices.front());
+               indices.pop();
+           }
+       }
+       return result;
+   }
+};
