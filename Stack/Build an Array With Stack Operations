@@ -1,0 +1,19 @@
+class Solution {
+public:
+    vector<string> buildArray(vector<int>& target, int n) {
+        vector<string>result;
+        stack<int>stk;
+        int targetIndex = 0;
+        for (int i = 1; i <= n && targetIndex < target.size(); ++i) {
+            stk.push(i);
+            result.push_back("Push");
+            if (stk.top() == target[targetIndex]) {
+                ++targetIndex;
+            } else {
+                stk.pop();
+                result.push_back("Pop");
+            }
+        }
+        return result;
+    }
+};
