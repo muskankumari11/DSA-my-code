@@ -1,0 +1,20 @@
+//Leetcode Medium
+class Solution {
+public:
+    vector<int> findThePrefixCommonArray(vector<int>& q, vector<int>& w) {
+        int n=q.size();
+        vector<int>c;
+        for(int i=0;i<n;i++){
+            int cnt=0;
+            for(int k=0;k<=i;k++){
+                for(int p=0;p<=i;p++){
+                    if(q[k]==w[p]){
+                        cnt++;
+                    }
+                }
+            }
+            c.push_back(cnt);
+        }
+        return c;
+    }
+};
