@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int partitionString(string s) {
+        int ans = 1;
+        vector<int> v(26,0);
+        for(auto &i: s){
+            if(v[i-'a']){
+                ans++;
+                fill(v.begin(),v.end(),0);
+            }
+            v[i-'a']++;
+        }
+        return ans;
+    }
+};
