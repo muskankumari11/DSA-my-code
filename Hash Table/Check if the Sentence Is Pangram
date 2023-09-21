@@ -1,0 +1,10 @@
+class Solution {
+public:
+    bool checkIfPangram(string sentence) {
+        unordered_map<char, int> letterCount;
+        for (char c : sentence) {
+            letterCount[c]++;
+        }
+        return letterCount.size() == 26;
+    }
+};
