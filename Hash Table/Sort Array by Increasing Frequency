@@ -1,0 +1,19 @@
+class Solution {
+public:
+    vector<int> frequencySort(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> result(n);
+        unordered_map<int, int> freqMap;
+        for (int num : nums) {
+            freqMap[num]++;
+        }
+        auto cmp = [&](int a, int b) {
+            if (freqMap[a] == freqMap[b]) {
+                return a > b; 
+            }
+            return freqMap[a] < freqMap[b]; 
+        };
+        sort(nums.begin(), nums.end(), cmp);
+        return nums;
+    }
+};
