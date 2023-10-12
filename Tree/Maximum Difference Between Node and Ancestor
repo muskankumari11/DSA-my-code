@@ -1,0 +1,21 @@
+//leetcode medium
+class Solution {
+public:
+    int maxAncestorDiff(TreeNode* root) {
+        maxDiff = 0;
+        maxAncestorDiffHelper(root, root->val, root->val);
+        return maxDiff;
+    }
+    void maxAncestorDiffHelper(TreeNode* node, int minVal, int maxVal) {
+        if (node == nullptr) {
+            return;
+        }
+        maxDiff = max(maxDiff, max(abs(maxVal - node->val), abs(minVal - node->val)));
+        minVal = min(minVal, node->val);
+        maxVal = max(maxVal, node->val);
+        maxAncestorDiffHelper(node->left, minVal, maxVal);
+        maxAncestorDiffHelper(node->right, minVal, maxVal);
+    }
+private:
+    int maxDiff;
+};
