@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int cnt = 0;
+    void solve(TreeNode* root, int max) {
+        if (!root) {
+            return;
+        }
+        if (root->val >= max) {
+            cnt++;
+            max = root->val;
+        }
+        solve(root->left, max);
+        solve(root->right, max);
+    }
+    int goodNodes(TreeNode* root) {
+        solve(root, INT_MIN);
+        return cnt;
+    }
+};
